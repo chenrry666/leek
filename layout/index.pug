@@ -1,0 +1,33 @@
+extends _partial/layout.pug
+
+block head
+	!= css(['/css/index.css'])
+
+block content
+	div
+		ul
+			- site.posts.forEach(function(item){
+				li
+					h3!= item.date.format("MMM DD, YYYY")
+					h2
+						a(href=url_for(item.path))
+							- if(item.title !== "") {
+							span
+								- if(item.top) {
+								span.icon.iconfont.icon-pin-top.post-top(title=__('pinned'))
+								- }
+								= item.title
+							- } else {
+							span= untitled
+							- }
+					p!= truncate(strip_html(item.content.replace(/<pre(?: |>)[^]*?<\/pre>/gm, ' ')), {length: config.truncate_len})
+			- })
+
+			nav.post-navigation
+				- if(page.prev !== 0) {
+				a#prev.index-nav(href!=url_for(page.prev_link)) < NEWER
+				- }
+				- if(page.next !== 0) {
+				a#next.index-nav(href!=url_for(page.next_link)) OLDER >
+				- }
+				

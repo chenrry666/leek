@@ -1,0 +1,32 @@
+extends _partial/layout.pug
+
+block head
+	!= css(['/css/post.css','/css/prism.css'])
+	!= open_graph()
+
+block content
+	script(src="https://polyfill.io/v3/polyfill.min.js?features=es6")
+	script#MathJax-script(type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js")
+	script.
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+
+	.post
+		h3.date
+			!= page.date.format('MMM DD, YYYY')
+		h1
+			!= page.title 
+		!= toc(page.content, { class: 'toc', list_number: true }) 
+		.content.markdown-body
+			!= page.more
+		- if(theme.prevnext.enable) { 
+			- if(page.next) { 
+				a#older.blog-nav(href=url_for(page.next.path)) OLDER >
+			- }
+			- if(page.prev) { 
+				a#newer.blog-nav(href=url_for(page.prev.path)) < NEWER
+			- } 
+		- }

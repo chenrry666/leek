@@ -1,0 +1,20 @@
+extends _partial/layout.pug
+
+block title
+	title
+		= __("category")
+		- if (page.category) {
+			|: #{page.category}
+		- }
+
+block content
+	div
+		ul
+			- page.posts.forEach(function(item){
+				li
+					h2
+						a(href=url_for(item.path))
+							span
+								= item.title
+			- })
+

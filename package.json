@@ -1,0 +1,29 @@
+{
+	"name": "leek",
+	"version": "1.0.0",
+	"description": "A simple blog theme based on leedom.",
+	"scripts": {
+		"format": "prettier --write '**/*.pug'"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/chenrry666/leek.git"
+	},
+	"keywords": [
+		"hexo",
+		"theme",
+		"leek",
+		"simple"
+	],
+	"author": "chenrry666",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/chenrry666/leek/issues"
+	},
+	"homepage": "https://github.com/chenrry666/leek#readme",
+	"packageManager": "yarn@3.5.0",
+	"devDependencies": {
+		"@prettier/plugin-pug": "^2.4.1",
+		"prettier": "^2.8.7"
+	}
+}

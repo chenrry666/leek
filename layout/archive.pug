@@ -1,0 +1,38 @@
+extends _partial/layout.pug
+
+block title
+	title
+		= __('archive')
+		- if (is_month()){
+			|: #{page.year} / #{page.month}
+		- } else if (is_year()){
+			|: #{page.year}
+		- }
+
+block content
+	.container.archives
+		.post-list
+			-
+			-	var prev = -10086;// prev year
+			-	var curr;// curr year, ever step be updated
+
+			-	site.posts.sort('date', -1).each(function(item, index) {
+			-		curr = item.date.year()
+			-		if (curr !== prev) {
+			-			prev = curr;
+			.content-title
+				h2
+					span!= curr
+				
+			- }
+				
+			.post-item(title=item.title)
+				.time-m-d!= item.date.format("MM-DD")
+				.title
+					a(href=url_for(item.path))
+						- if(item.title !== "") { 
+						span!= item.title
+						- } else { 
+						span untitled
+						- } 
+			- });
