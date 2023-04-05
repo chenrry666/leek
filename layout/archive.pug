@@ -20,11 +20,10 @@ block content
 			-		curr = item.date.year()
 			-		if (curr !== prev) {
 			-			prev = curr;
-			.content-title
-				h2
-					span!= curr
-				
-			- }
+				.content-title
+					h2
+						span!= curr
+			-		}
 				
 			.post-item(title=item.title)
 				.time-m-d!= item.date.format("MM-DD")

@@ -18,7 +18,7 @@ block content
 								- }
 								= item.title
 							- } else {
-							span= untitled
+								span= untitled
 							- }
 					p!= truncate(strip_html(item.content.replace(/<pre(?: |>)[^]*?<\/pre>/gm, ' ')), {length: config.truncate_len})
 			- })
