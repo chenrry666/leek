@@ -1,39 +1,40 @@
-# 相关配置说明
-  # favicon: 网站图标
-  # avatar: 主题用户头像与昵称
-  # rss: rss订阅
-  # prevnext: 文章末尾的上一页与下一页
-  # footer: 页脚信息
-  # search: 文章搜索
+comments:
+  giscus:
+    enable: true
+    repo: "chenrry666/chenrry666.github.io"
+    repo_id: "MDEwOlJlcG9zaXRvcnkyNTcyMTgwNDU="
+    category: "General"
+    category_id: "DIC_kwDOD1TV_c4CViaw"
+    mapping: "pathname"
+    strict: "0"
+    reactions_enabled: "1"
+    emit_metadata: "0"
+    input_position: "top"
+    theme: "light"
+    lang: "zh-CN"
+    loading: "lazy"
 
-# enable: 是否开启相应功能，可选true || false
-
-# 网站图标
 favicon:
   enable: true
   icon: /images/favicon.png
   touch_icon: /images/favicon.png
 
-# 用户头像与昵称
 avatar:
-  author_photo: /images/avatar.png
   author_nickname: Chenrry666
   path: /
 
-# 文章末尾的上一页与下一页
 prevnext:
   enable: true
 
-# 链接信息
 link: 
-  # name: 名称
-  # icon: 图标，目前仅支持IconFont部分图标
-  # path: 地址
-  # target: 跳转方式
+  -
+    name: categories
+    icon: bookmark
+    path: /categories/
   -
     # 档案
     name: archives
-    icon: bookmark
+    icon: updatetime
     path: /archives/
   -
     name: github
@@ -61,23 +62,18 @@ link:
   #   icon: weibo
   #   path:
   -
-    # rss需安装 hexo-generator-feed 插件
-    # 具体参照https://github.com/hexojs/hexo-generator-feed
     name: rss
     icon: rss
     path: /atom.xml
     target: _blank
 
-
-# 页脚信息
 footer:
   -
-    name: Copyright © Chenrry666 2023
+    name: Copyright © Chenrry666 2022
     path: https://github.com/chenrry666
   -
     name: Theme by Leek | Powered by Hexo
     path: https://github.com/chenrry666/leek
 
-# 文章搜索
 search:
   enable: true
