@@ -20,7 +20,11 @@ block content
 							- } else {
 								span= untitled
 							- }
-					p!= truncate(strip_html(item.content.replace(/<pre(?: |>)[^]*?<\/pre>/gm, ' ')), {length: config.truncate_len})
+					- if (item.excerpt) {
+						p!= item.excerpt
+					- } else {
+						p!= truncate(strip_html(item.content.replace(/<pre(?: |>)[^]*?<\/pre>/gm, ' ')), {length: 160})
+					- }
 			- })
 
 			nav.post-navigation
