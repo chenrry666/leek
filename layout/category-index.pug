@@ -8,13 +8,24 @@ block title
 		- }
 
 block content
-	div
-		ul
-			- site.categories.forEach(function(item){
-				li
+	.container
+		.post-list.category-details
+			- site.categories.forEach(function(category){
+				.content-title
 					h2
-						a(href=url_for(item.path))
-							span
-								= item.name
+						a(href=url_for(category.path))
+							= category.name
+				- for (let i = 0; i<category.posts.data.length; i++) {
+				-	let item = category.posts.data[i]
+					.post-item(title=item.title)
+						.time-m-d!= item.date.format("MM-DD")
+						.title
+							a(href=url_for(item.path))
+								- if(item.title !== "") { 
+								span!= item.title
+								- } else { 
+								span untitled
+								- } 
+				- }
 			- })
 
