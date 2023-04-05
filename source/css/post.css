@@ -58,14 +58,6 @@
 }
 .post .content ul {
   padding-left: 15px;
-  list-style-type: none;
-}
-.post .content ul li:before {
-  position: absolute;
-  font-weight: 600;
-  content: " · ";
-  margin: 0;
-  left: 0;
 }
 .post .content a {
   color: #f66;
