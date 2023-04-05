@@ -7,16 +7,12 @@ block title
 block head
 	!= css(['/css/post.css','/css/prism.css'])
 	!= open_graph()
+	- if(page.katex) {
+		link(href="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.4/katex.min.css" rel="stylesheet")
+	- }
 
 block content
 	script(src="https://polyfill.io/v3/polyfill.min.js?features=es6")
-	script#MathJax-script(type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js")
-	script.
-		MathJax = {
-			tex: {
-				inlineMath: [['$', '$'], ['\\(', '\\)']]
-			}
-		};
 
 	.post
 		h3.date
