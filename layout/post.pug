@@ -19,7 +19,8 @@ block content
 			!= page.date.format('MMM DD, YYYY')
 		h1
 			!= page.title 
-		!= toc(page.content, { class: 'toc', list_number: true }) 
+		//- h5 TOC
+		//- != toc(page.content, { class: 'toc', list_number: false }) 
 		.content.markdown-body
 			!= page.more
 		- if(theme.prevnext.enable) { 
