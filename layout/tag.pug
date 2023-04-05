@@ -2,9 +2,9 @@ extends _partial/layout.pug
 
 block title
 	title
-		= __("category")
-		- if (page.category) {
-			|: #{page.category}
+		= __("tags")
+		- if (page.tag) {
+			|: #{page.tag}
 		- }
 
 block content
@@ -12,7 +12,7 @@ block content
 		.post-list.category-details
 			.content-title
 				h2
-					span= page.category
+					span= page.tag
 			- page.posts.forEach(function(item){
 				.post-item(title=item.title)
 					.time-m-d!= item.date.format("MM-DD")
@@ -24,4 +24,3 @@ block content
 							span untitled
 							- } 
 			- })
-
