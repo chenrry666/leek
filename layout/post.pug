@@ -1,5 +1,9 @@
 extends _partial/layout.pug
 
+block title
+	title
+		!= page.title
+
 block head
 	!= css(['/css/post.css','/css/prism.css'])
 	!= open_graph()
